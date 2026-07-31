@@ -220,7 +220,6 @@ export function MainLayout({ children }: MainLayoutProps) {
             material={material}
             setMaterial={setMaterial}
             simulationType={simulationType}
-            setSimulationType={handleSimulationTypeChange}
             fractalType={fractalType || "mandelbulb"}
             setFractalType={setFractalType}
             showBoundingBox={showBoundingBox}

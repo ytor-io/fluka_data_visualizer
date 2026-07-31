@@ -35,7 +35,6 @@ interface DoubleNavbarProps {
   material: string;
   setMaterial: (value: string) => void;
   simulationType: 'beam' | 'fractal';
-  setSimulationType: (type: 'beam' | 'fractal') => void;
   fractalType: string | null;
   setFractalType: (type: string | null) => void;
   showBoundingBox: boolean;
@@ -82,7 +81,6 @@ export function DoubleNavbar({
   material,
   setMaterial,
   simulationType,
-  setSimulationType,
   fractalType,
   setFractalType,
   showBoundingBox,
