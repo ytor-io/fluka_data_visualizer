@@ -58,7 +58,7 @@ interface DoubleNavbarProps {
 }
 
 const mainLinksMockdata = [
-  { icon: IconHome2, label: 'Home' },
+  // { icon: IconHome2, label: 'Home' },
   { icon: IconGauge, label: 'Dashboard' },
   { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
   // { icon: IconCalendarStats, label: 'Releases' },
