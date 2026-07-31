@@ -93,8 +93,8 @@ export function DoubleNavbar({
   fractalParams,
   setFractalParams
 }: DoubleNavbarProps) {
-  // Change the initial state to 0 (Home)
-  const [active, setActive] = useState(0);
+  // Default to Dashboard (beam simulation) on page landing
+  const [active, setActive] = useState(1);
 
   const mainLinks = mainLinksMockdata.map((link, index) => (
     <Tooltip
