@@ -12,7 +12,6 @@ import {
   // IconSettings,
 } from '@tabler/icons-react';
 import classes from './DoubleNavbar.module.css';
-import { HomePage } from './HomePage';
 import { DashboardPage_Beam } from './DashboardPage_Beam';
 import { DashboardPage_Fractal } from './DashboardPage_Fractal';
 import { AnalyticsPage_Beam } from './AnalyticsPage_Beam';
@@ -94,7 +93,7 @@ export function DoubleNavbar({
   setFractalParams
 }: DoubleNavbarProps) {
   // Default to Dashboard (beam simulation) on page landing
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
 
   const mainLinks = mainLinksMockdata.map((link, index) => (
     <Tooltip
@@ -116,16 +115,7 @@ export function DoubleNavbar({
 
   const renderContent = () => {
     switch (active) {
-      case 0: // Home
-        return <HomePage 
-          setSimulationType={(type) => {
-            setSimulationType(type);
-            setActive(1); // Move to Dashboard when a simulation type is selected
-          }}
-          setShowGrid={setShowGrid}
-          setShowBoundingBox={setShowBoundingBox}
-        />;
-      case 1: // Dashboard
+      case 0: // Dashboard
         return simulationType === 'beam' ? (
           <DashboardPage_Beam
             thresholdValue={thresholdValue}
@@ -158,14 +148,13 @@ export function DoubleNavbar({
             setShowBoundingBox={setShowBoundingBox}
           />
         );
-      case 2: // Analytics
+      case 1: // Analytics
         console.log("DoubleNavbar pointsData:", pointsData);
         return simulationType === 'beam' ? (
           <AnalyticsPage_Beam pointsData={pointsData} />
         ) : (
           <AnalyticsPage_Fractal fractalType={fractalType} />
         );
-      // ... other cases ...
       default:
         return <div>Select a section</div>;
     }
