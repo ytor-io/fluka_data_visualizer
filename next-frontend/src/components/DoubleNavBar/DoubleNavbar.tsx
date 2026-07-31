@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { UnstyledButton, Tooltip, rem } from '@mantine/core';
 import {
-  IconHome2,
+  // IconHome2,
   IconGauge,
   IconDeviceDesktopAnalytics,
   // IconFingerprint,
